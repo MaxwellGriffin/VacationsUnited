@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Destination.cs" />
+    <Compile Include="Enums.cs" />
     <Compile Include="Group.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Itinerary.cs" />

@@ -1,13 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static VacationsUnited.Data.Enums;
 
 namespace VacationsUnited.Data
 {
-    class Destination
+    public class Destination
     {
+        [Key]
         public int DestinationID { get; set; }
         public Regions Region { get; set; }
         public TripTypes TripType { get; set; }
@@ -16,23 +19,5 @@ namespace VacationsUnited.Data
         public int MinGuests { get; set; }
         public int MaxGuests { get; set; }
         public string Location { get; set; }
-
-        public enum TripTypes
-        {
-            Family = 0,
-            Girls = 1,
-            Boys = 2,
-            Individual = 3,
-            Couples = 4
-        };
-
-        public enum Regions
-        {
-            Northeast = 0,
-            Southeast = 1,
-            Southwest = 2,
-            West = 3,
-            Midwest = 4
-        };
     }
 }
