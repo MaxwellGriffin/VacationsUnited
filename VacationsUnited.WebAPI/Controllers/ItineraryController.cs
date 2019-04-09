@@ -11,7 +11,7 @@ using VacationsUnited.Services;
 namespace VacationsUnited.WebAPI.Controllers
 {
     [Authorize]
-    public class NoteController : ApiController
+    public class ItineraryController : ApiController
     {
         public IHttpActionResult GetAll()
         {
