@@ -10,6 +10,7 @@ using Microsoft.Owin.Security.OAuth;
 using Owin;
 using VacationsUnited.WebAPI.Providers;
 using VacationsUnited.WebAPI.Models;
+using VacationsUnited.Data;
 
 namespace VacationsUnited.WebAPI
 {

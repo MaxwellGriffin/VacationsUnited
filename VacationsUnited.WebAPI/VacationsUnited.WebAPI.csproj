@@ -212,6 +212,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\GroupController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -219,7 +220,6 @@
     </Compile>
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
@@ -312,6 +312,20 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VacationsUnited.Data\VacationsUnited.Data.csproj">
+      <Project>{629DBD2C-234C-4C03-BF36-468AD8CC482B}</Project>
+      <Name>VacationsUnited.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VacationsUnited.Models\VacationsUnited.Models.csproj">
+      <Project>{844f71ab-a20d-4631-bc8c-d8a7c5d74508}</Project>
+      <Name>VacationsUnited.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VacationsUnited.Services\VacationsUnited.Services.csproj">
+      <Project>{4d4454e2-3508-439b-b75b-286485baa004}</Project>
+      <Name>VacationsUnited.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
