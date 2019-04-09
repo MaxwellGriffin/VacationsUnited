@@ -5,69 +5,73 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using VacationsUnited.Models.Group.models;
+using VacationsUnited.Models.Itinerary;
 using VacationsUnited.Services;
 
 namespace VacationsUnited.WebAPI.Controllers
 {
     [Authorize]
-    public class GroupController : ApiController
+    public class NoteController : ApiController
     {
         public IHttpActionResult GetAll()
         {
-            GroupService groupService = CreateGroupService();
-            var groups = groupService.GetGroups();
-            return Ok(groups);
+            ItineraryService itineraryService = CreateItineraryService();
+            var itinerarys = itineraryService.GetItinerarys();
+            return Ok(itinerarys);
         }
 
-        private GroupService CreateGroupService()
+        private ItineraryService CreateItineraryService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
-            var groupService = new GroupService(userId);
-            return groupService;
+            var itineraryService = new ItineraryService(userId);
+            return itineraryService;
         }
 
         public IHttpActionResult Get(int id)
         {
-            GroupService groupService = CreateGroupService();
-            var group = groupService.GetGroupByID(id);
+            ItineraryService itineraryService = CreateItineraryService();
+            var itinerary = itineraryService.GetItineraryByID(id);
             return Ok();
         }
 
-        public IHttpActionResult Post(GroupCreate group)
+        public IHttpActionResult Post(ItineraryCreate itinerary)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var service = CreateGroupService();
+            var service = CreateItineraryService();
 
-            if (!service.CreateGroup(group))
+            if (!service.CreateItinerary(itinerary))
                 return InternalServerError();
 
             return Ok();
         }
 
-        public IHttpActionResult Put(GroupEdit group)
+        public IHttpActionResult Put(ItineraryEdit itinerary)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var service = CreateGroupService();
+            var service = CreateItineraryService();
 
-            if (!service.EditGroup(group))
+            if (!service.EditItinerary(itinerary))
                 return InternalServerError();
+
             return Ok();
         }
 
         public IHttpActionResult Delete(int id)
         {
-            var service = CreateGroupService();
+            var service = CreateItineraryService();
 
-            if (!service.DeleteGroup(id))
+            if (!service.DeleteItinerary(id))
                 return InternalServerError();
 
             return Ok();
         }
 
+
     }
+
+
 }
