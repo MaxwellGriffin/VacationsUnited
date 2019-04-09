@@ -54,10 +54,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+
     <Compile Include="DestinationCreate.cs" />
     <Compile Include="DestinationDetail.cs" />
     <Compile Include="DestinationEdit.cs" />
     <Compile Include="DestinationListItem.cs" />
+    <Compile Include="Itinerary\ItineraryCreate.cs" />
+
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
