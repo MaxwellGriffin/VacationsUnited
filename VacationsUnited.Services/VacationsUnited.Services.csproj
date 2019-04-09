@@ -54,11 +54,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DestinationService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VacationsUnited.Data\VacationsUnited.Data.csproj">
+      <Project>{629dbd2c-234c-4c03-bf36-468ad8cc482b}</Project>
+      <Name>VacationsUnited.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VacationsUnited.Models\VacationsUnited.Models.csproj">
+      <Project>{844f71ab-a20d-4631-bc8c-d8a7c5d74508}</Project>
+      <Name>VacationsUnited.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
