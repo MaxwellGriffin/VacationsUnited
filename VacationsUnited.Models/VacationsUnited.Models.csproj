@@ -54,17 +54,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Group.models\GroupCreate.cs" />
-    <Compile Include="Group.models\GroupDetails.cs" />
-    <Compile Include="Group.models\GroupEdit.cs" />
-    <Compile Include="Group.models\GroupListItem.cs" />
-    <Compile Include="DestinationCreate.cs" />
-    <Compile Include="DestinationDetail.cs" />
-    <Compile Include="DestinationEdit.cs" />
-    <Compile Include="DestinationListItem.cs" />
+    <Compile Include="Group\GroupCreate.cs" />
+    <Compile Include="Group\GroupDetails.cs" />
+    <Compile Include="Group\GroupEdit.cs" />
+    <Compile Include="Group\GroupListItem.cs" />
+    <Compile Include="Destination\DestinationCreate.cs" />
+    <Compile Include="Destination\DestinationDetail.cs" />
+    <Compile Include="Destination\DestinationEdit.cs" />
+    <Compile Include="Destination\DestinationListItem.cs" />
     <Compile Include="Itinerary\ItineraryCreate.cs" />
-
-
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
