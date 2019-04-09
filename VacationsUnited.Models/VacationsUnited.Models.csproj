@@ -63,6 +63,9 @@
     <Compile Include="Destination\DestinationEdit.cs" />
     <Compile Include="Destination\DestinationListItem.cs" />
     <Compile Include="Itinerary\ItineraryCreate.cs" />
+    <Compile Include="Itinerary\ItineraryDetail.cs" />
+    <Compile Include="Itinerary\ItineraryEdit.cs" />
+    <Compile Include="Itinerary\ItineraryListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
