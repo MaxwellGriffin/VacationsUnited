@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using VacationsUnited.Models.Group.models;
 using VacationsUnited.Services;
 
 namespace VacationsUnited.WebAPI.Controllers
@@ -12,7 +13,7 @@ namespace VacationsUnited.WebAPI.Controllers
     [Authorize]
     public class GroupController : ApiController
     {
-        public IHttpActionResult Get()
+        public IHttpActionResult GetAll()
         {
             GroupService groupService = CreateGroupService();
             var groups = groupService.GetGroups();
@@ -25,6 +26,48 @@ namespace VacationsUnited.WebAPI.Controllers
             var groupService = new GroupService(userId);
             return groupService;
         }
-        
+
+        public IHttpActionResult Get(int id)
+        {
+            GroupService groupService = CreateGroupService();
+            var group = groupService.GetGroupByID(id);
+            return Ok();
+        }
+
+        public IHttpActionResult Post(GroupCreate group)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var service = CreateGroupService();
+
+            if (!service.CreateGroup(group))
+                return InternalServerError();
+
+            return Ok();
+        }
+
+        public IHttpActionResult Put(GroupEdit group)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var service = CreateGroupService();
+
+            if (!service.EditGroup(group))
+                return InternalServerError();
+            return Ok();
+        }
+
+        public IHttpActionResult Delete(int id)
+        {
+            var service = CreateGroupService();
+
+            if (!service.DeleteGroup(id))
+                return InternalServerError();
+
+            return Ok();
+        }
+
     }
 }
