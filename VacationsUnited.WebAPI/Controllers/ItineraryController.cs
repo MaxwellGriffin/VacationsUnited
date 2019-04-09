@@ -2,22 +2,22 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+using System.Net;
+using System.Net.Http;
+using System.Web.Http;
+using VacationsUnited.Models.Itinerary;
+using VacationsUnited.Services;
 
 namespace VacationsUnited.WebAPI.Controllers
 {
     [Authorize]
-    public class ItineraryController : Controller
+    public class NoteController : ApiController
     {
-        // GET: Itinerary
-
-            public IHttpActionResult Get()
+        public IHttpActionResult GetAll()
         {
             ItineraryService itineraryService = CreateItineraryService();
-            var itineraries = itineraryService.GetItineraries();
-            return (itineraries);
-
+            var itinerarys = itineraryService.GetItinerarys();
+            return Ok(itinerarys);
         }
 
         private ItineraryService CreateItineraryService()
@@ -26,5 +26,52 @@ namespace VacationsUnited.WebAPI.Controllers
             var itineraryService = new ItineraryService(userId);
             return itineraryService;
         }
+
+        public IHttpActionResult Get(int id)
+        {
+            ItineraryService itineraryService = CreateItineraryService();
+            var itinerary = itineraryService.GetItineraryByID(id);
+            return Ok();
+        }
+
+        public IHttpActionResult Post(ItineraryCreate itinerary)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var service = CreateItineraryService();
+
+            if (!service.CreateItinerary(itinerary))
+                return InternalServerError();
+
+            return Ok();
+        }
+
+        public IHttpActionResult Put(ItineraryEdit itinerary)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var service = CreateItineraryService();
+
+            if (!service.EditItinerary(itinerary))
+                return InternalServerError();
+
+            return Ok();
+        }
+
+        public IHttpActionResult Delete(int id)
+        {
+            var service = CreateItineraryService();
+
+            if (!service.DeleteItinerary(id))
+                return InternalServerError();
+
+            return Ok();
+        }
+
+
     }
+
+
 }

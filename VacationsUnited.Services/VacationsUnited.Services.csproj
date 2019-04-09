@@ -61,5 +61,15 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VacationsUnited.Data\VacationsUnited.Data.csproj">
+      <Project>{629DBD2C-234C-4C03-BF36-468AD8CC482B}</Project>
+      <Name>VacationsUnited.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VacationsUnited.Models\VacationsUnited.Models.csproj">
+      <Project>{844F71AB-A20D-4631-BC8C-D8A7C5D74508}</Project>
+      <Name>VacationsUnited.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
