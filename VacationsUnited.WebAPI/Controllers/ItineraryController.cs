@@ -31,7 +31,7 @@ namespace VacationsUnited.WebAPI.Controllers
         {
             ItineraryService itineraryService = CreateItineraryService();
             var itinerary = itineraryService.GetItineraryByID(id);
-            return Ok();
+            return Ok(itinerary);
         }
 
         public IHttpActionResult Post(ItineraryCreate itinerary)
