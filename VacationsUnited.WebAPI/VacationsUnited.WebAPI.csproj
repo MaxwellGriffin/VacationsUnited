@@ -216,6 +216,7 @@
     <Compile Include="Controllers\DestinationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ItineraryController.cs" />
+    <Compile Include="Controllers\SelectedDestinationController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
