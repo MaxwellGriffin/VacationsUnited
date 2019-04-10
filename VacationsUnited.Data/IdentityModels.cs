@@ -36,6 +36,7 @@ namespace VacationsUnited.Data
         public DbSet<Destination> Destinations { get; set; }
         public DbSet<Group> Groups { get; set; }
         public DbSet<Itinerary> Itinerarys { get; set; }
+        public DbSet<SelectedDestination> SelectedDestinations { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

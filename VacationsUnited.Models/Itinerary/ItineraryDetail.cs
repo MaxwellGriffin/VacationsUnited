@@ -11,7 +11,7 @@ namespace VacationsUnited.Models.Itinerary
     {
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTimeOffset ItineraryDate { get; set; }
-
+        public int ItineraryID { get; set; }
         public string ItineraryName { get; set; }
     }
 }

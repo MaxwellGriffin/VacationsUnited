@@ -10,10 +10,9 @@ namespace VacationsUnited.Data
     public class Itinerary
     {
         [Key]
-        public int ItineraryID { get; set; }
+        public int ItineraryID { get; set; } //unique key
         public Guid OwnerID { get; set; }
         public int GroupID { get; set; }
-        public int DestinationId { get; set; }
         public DateTimeOffset ItineraryDate {get; set;}
         public string ItineraryName { get; set; }
     }

@@ -67,6 +67,10 @@
     <Compile Include="Itinerary\ItineraryEdit.cs" />
     <Compile Include="Itinerary\ItineraryListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SelectedDestination\SelectedDestinationCreate.cs" />
+    <Compile Include="SelectedDestination\SelectedDestinationDetail.cs" />
+    <Compile Include="SelectedDestination\SelectedDestinationEdit.cs" />
+    <Compile Include="SelectedDestination\SelectedDestinationListItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -78,5 +82,6 @@
       <Name>VacationsUnited.Data</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
