@@ -6,6 +6,7 @@ using System.Security.Cryptography;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using System.Web.Http.ModelBinding;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
@@ -18,16 +19,12 @@ using VacationsUnited.WebAPI.Models;
 using VacationsUnited.WebAPI.Providers;
 using VacationsUnited.WebAPI.Results;
 
+
 namespace VacationsUnited.WebAPI.Controllers
 {
-    namespace ElevenNote.Web.Controllers
-    {
 
-#if !DEBUG
-     [RequireHttps]
 
-#endif
-        [Authorize]
+    [Authorize]
         [RoutePrefix("api/Account")]
         public class AccountController : ApiController
         {
@@ -500,4 +497,3 @@ namespace VacationsUnited.WebAPI.Controllers
             #endregion
         }
     }
-}
