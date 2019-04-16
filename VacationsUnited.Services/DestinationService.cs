@@ -53,7 +53,12 @@ namespace VacationsUnited.Services
                                 {
                                     DestinationID = e.DestinationID,
                                     Name = e.Name,
-                                    Location = e.Location
+                                    Location = e.Location,
+                                    Region = e.Region,
+                                    TripType = e.TripType,
+                                    Price = e.Price,
+                                    MinGuests = e.MinGuests,
+                                    MaxGuests = e.MaxGuests
                                 }
                         );
 

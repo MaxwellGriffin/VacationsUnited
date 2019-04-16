@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using VacationsUnited.Models.Group.models;
 using VacationsUnited.Services;
 
