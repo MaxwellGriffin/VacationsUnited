@@ -11,6 +11,7 @@ using VacationsUnited.Services;
 
 namespace VacationsUnited.WebAPI.Controllers
 {
+    //[EnableCors(origins: "*", headers: "*", methods: "*")]
     [Authorize]
     public class ItineraryController : ApiController
     {

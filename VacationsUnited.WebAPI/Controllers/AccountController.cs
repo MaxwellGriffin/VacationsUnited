@@ -23,7 +23,7 @@ using VacationsUnited.WebAPI.Results;
 namespace VacationsUnited.WebAPI.Controllers
 {
 
-
+    //[EnableCors(origins:"*", headers:"*", methods:"*")]
     [Authorize]
         [RoutePrefix("api/Account")]
         public class AccountController : ApiController

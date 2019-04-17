@@ -13,14 +13,18 @@ namespace VacationsUnited.WebAPI
     {
         public static void Register(HttpConfiguration config)
         {
+            //var cors = new EnableCorsAttribute("*", "*", "*");
+            //config.EnableCors(cors);
+
+            //config.EnableCors();
+
             // Web API configuration and services
             // Configure Web API to use only bearer token authentication.
             config.SuppressDefaultHostAuthentication();
             config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));
 
 
-            //var cors = new EnableCorsAttribute("*", "*", "*");
-            //config.EnableCors(cors);
+            
 
             // Web API routes
             config.MapHttpAttributeRoutes();
