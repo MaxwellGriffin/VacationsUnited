@@ -11,6 +11,7 @@ using VacationsUnited.Services;
 
 namespace ElevenDestination.WebAPI.Controllers
 {
+    //[EnableCors(origins: "*", headers: "*", methods: "*")]
     [Authorize]
     public class DestinationController : ApiController
     {
