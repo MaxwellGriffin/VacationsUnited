@@ -39,6 +39,7 @@ namespace VacationsUnited.Services
             {
                 var query = ctx.Itinerarys.Where(c => c.OwnerID == id).Select(c => new ItineraryListItem
                 {
+                    ItineraryID = c.ItineraryID,
                     ItineraryDate = c.ItineraryDate,
                     ItineraryName = c.ItineraryName 
                 });
@@ -55,6 +56,7 @@ namespace VacationsUnited.Services
                     .Select(e =>
                 new ItineraryListItem
                 {
+                    ItineraryID = e.ItineraryID,
                     ItineraryDate = e.ItineraryDate,
                     ItineraryName = e.ItineraryName
                 }
@@ -70,6 +72,7 @@ namespace VacationsUnited.Services
                 var entity = ctx.Itinerarys.FirstOrDefault(c => c.ItineraryID == id);
                 var model = new ItineraryDetail
                 {
+                    ItineraryID = entity.ItineraryID,
                     ItineraryDate = entity.ItineraryDate,
                     ItineraryName = entity.ItineraryName
                 };
