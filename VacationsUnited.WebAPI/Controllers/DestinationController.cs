@@ -22,6 +22,13 @@ namespace ElevenDestination.WebAPI.Controllers
             return Ok(destinations);
         }
 
+        public IHttpActionResult GetAll(string groupId, string itineraryId) //get filtered destinations
+        {
+            DestinationService destinationService = CreateDestinationService();
+            var destinations = destinationService.GetDestinationsByFilter(int.Parse(groupId), int.Parse(itineraryId));
+            return Ok(destinations);
+        }
+
         public IHttpActionResult Get(int id)
         {
             DestinationService destinationService = CreateDestinationService();

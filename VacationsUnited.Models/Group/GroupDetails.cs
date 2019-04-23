@@ -11,7 +11,6 @@ namespace VacationsUnited.Models.Group.models
     {
         public string Name { get; set; }
         public TripTypes TripType { get; set; }
-        public Regions Region { get; set; }
         public int GuestCount { get; set; }
         
         

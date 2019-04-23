@@ -13,7 +13,6 @@ namespace VacationsUnited.Data
         [Key]
         public int GroupID { get; set; }
         public TripTypes TripType { get; set; }
-        public Regions Region { get; set; }
         public int GuestCount { get; set; }
         public Guid OwnerID { get; set; }
         public string Name { get; set; }
