@@ -22,7 +22,9 @@ namespace VacationsUnited.Services
             var entity = new Itinerary()
             {
                 ItineraryDate = model.ItineraryDate,
-                ItineraryName = model.ItineraryName
+                ItineraryName = model.ItineraryName,
+                Region = model.Region
+
             };
 
             using (var ctx = new ApplicationDbContext())
@@ -39,8 +41,11 @@ namespace VacationsUnited.Services
             {
                 var query = ctx.Itinerarys.Where(c => c.OwnerID == id).Select(c => new ItineraryListItem
                 {
+                    ItineraryID = c.ItineraryID,
                     ItineraryDate = c.ItineraryDate,
-                    ItineraryName = c.ItineraryName 
+                    ItineraryName = c.ItineraryName,
+                    Region = c.Region
+
                 });
                 return query.ToArray();
             }
@@ -55,8 +60,11 @@ namespace VacationsUnited.Services
                     .Select(e =>
                 new ItineraryListItem
                 {
+                    ItineraryID = e.ItineraryID,
                     ItineraryDate = e.ItineraryDate,
-                    ItineraryName = e.ItineraryName
+                    ItineraryName = e.ItineraryName,
+                    Region = e.Region
+
                 }
                 );
                 return query.ToArray();
@@ -70,8 +78,11 @@ namespace VacationsUnited.Services
                 var entity = ctx.Itinerarys.FirstOrDefault(c => c.ItineraryID == id);
                 var model = new ItineraryDetail
                 {
+                    ItineraryID = entity.ItineraryID,
                     ItineraryDate = entity.ItineraryDate,
-                    ItineraryName = entity.ItineraryName
+                    ItineraryName = entity.ItineraryName,
+                    Region = entity.Region
+
                 };
                 return model;
             }
@@ -85,6 +96,8 @@ namespace VacationsUnited.Services
 
                 entity.ItineraryDate = model.ItineraryDate;
                 entity.ItineraryName = model.ItineraryName;
+                entity.Region = model.Region;
+
 
                 return ctx.SaveChanges() == 1;
             }

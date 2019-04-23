@@ -11,6 +11,7 @@ using VacationsUnited.Services;
 
 namespace ElevenDestination.WebAPI.Controllers
 {
+    //[EnableCors(origins: "*", headers: "*", methods: "*")]
     [Authorize]
     public class DestinationController : ApiController
     {
@@ -18,6 +19,13 @@ namespace ElevenDestination.WebAPI.Controllers
         {
             DestinationService destinationService = CreateDestinationService();
             var destinations = destinationService.GetDestinations();
+            return Ok(destinations);
+        }
+
+        public IHttpActionResult GetAll(string groupId, string itineraryId) //get filtered destinations
+        {
+            DestinationService destinationService = CreateDestinationService();
+            var destinations = destinationService.GetDestinationsByFilter(int.Parse(groupId), int.Parse(itineraryId));
             return Ok(destinations);
         }
 

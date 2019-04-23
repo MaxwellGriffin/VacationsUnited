@@ -32,6 +32,14 @@ namespace VacationsUnited.WebAPI.Models
         public bool HasRegistered { get; set; }
 
         public string LoginProvider { get; set; }
+
+        //custom
+        public string UserID { get; set; }
+
+        public string UserRole { get; set; }
+
+        public string Username { get; set; }
+        //end custom
     }
 
     public class UserLoginInfoViewModel
