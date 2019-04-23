@@ -66,6 +66,37 @@ namespace VacationsUnited.Services
             }
         }
 
+        public IEnumerable<DestinationListItem> GetDestinationsByFilter(int groupId, int itineraryId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var groupQ = ctx.Groups.Where(g => g.GroupID == groupId).FirstOrDefault();
+                var itineraryQ = ctx.Itinerarys.Where(i => i.ItineraryID == itineraryId).FirstOrDefault();
+
+                var query =
+                    ctx
+                        .Destinations
+                        .Where(e => e.Region == itineraryQ.Region && e.TripType == groupQ.TripType)
+                        .Where(e => e.MinGuests <= groupQ.GuestCount && e.MaxGuests >= groupQ.GuestCount)
+                        .Select(
+                            e =>
+                                new DestinationListItem
+                                {
+                                    DestinationID = e.DestinationID,
+                                    Name = e.Name,
+                                    Location = e.Location,
+                                    Region = e.Region,
+                                    TripType = e.TripType,
+                                    Price = e.Price,
+                                    MinGuests = e.MinGuests,
+                                    MaxGuests = e.MaxGuests
+                                }
+                        );
+
+                return query.ToArray();
+            }
+        }
+
         public DestinationDetail GetDestinationById(int destinationId)
         {
             using (var ctx = new ApplicationDbContext())

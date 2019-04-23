@@ -23,8 +23,7 @@ namespace VacationsUnited.Services
                 OwnerID = _userID,
                 Name = model.Name,
                 TripType = model.TripType,
-                Region = model.Region,
-                GuestCount = model.GuestCount,
+                GuestCount = model.GuestCount
 
             };
 
@@ -43,8 +42,7 @@ namespace VacationsUnited.Services
                 {
                     Name = c.Name,
                     TripType = c.TripType,
-                    GuestCount = c.GuestCount,
-                    Region = c.Region
+                    GuestCount = c.GuestCount
                 });
 
                 return query.ToArray();
@@ -60,10 +58,10 @@ namespace VacationsUnited.Services
                     .Select(e =>
                     new GroupListItem
                     {
+                        GroupID = e.GroupID,
                         Name = e.Name,
                         TripType = e.TripType,
-                        GuestCount = e.GuestCount,
-                        Region = e.Region,
+                        GuestCount = e.GuestCount
 
                     }
 
@@ -83,7 +81,6 @@ namespace VacationsUnited.Services
                     Name = entity.Name,
                     TripType = entity.TripType,
                     GuestCount = entity.GuestCount,
-                    Region = entity.Region,
                 };
                 return model;
 
@@ -99,7 +96,6 @@ namespace VacationsUnited.Services
                 entity.Name = model.Name;
                 entity.TripType = model.TripType;
                 entity.GuestCount = model.GuestCount;
-                entity.Region = model.Region;
 
                 return ctx.SaveChanges() == 1;
             }

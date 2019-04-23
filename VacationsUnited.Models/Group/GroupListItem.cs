@@ -9,10 +9,11 @@ namespace VacationsUnited.Models.Group.models
 {
     public class GroupListItem
     {
+        public int GroupID { get; set; }
         public string Name { get; set; }
         public TripTypes TripType { get; set; }
-        public Regions Region { get; set; }
         public int GuestCount { get; set; }
+        
         
         
     }
