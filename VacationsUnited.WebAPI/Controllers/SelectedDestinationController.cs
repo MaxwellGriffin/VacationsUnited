@@ -15,10 +15,10 @@ namespace VacationsUnited.WebAPI.Controllers
     [Authorize]
     public class SelectedDestinationController : ApiController
     {
-        public IHttpActionResult GetAll(int itineraryId)
+        public IHttpActionResult GetAll(string itineraryId)
         {
             SelectedDestinationService selectedDestinationService = CreateSelectedDestinationService();
-            var selectedDestinations = selectedDestinationService.GetSelectedDestinations(itineraryId);
+            var selectedDestinations = selectedDestinationService.GetSelectedDestinations(int.Parse(itineraryId));
             return Ok(selectedDestinations);
         }
 
